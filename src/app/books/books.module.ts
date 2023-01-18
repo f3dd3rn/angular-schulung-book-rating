@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import BooksService from '../../services/books';
+import BooksService from '../services/books';
 
 import { BooksRoutingModule } from './books-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';

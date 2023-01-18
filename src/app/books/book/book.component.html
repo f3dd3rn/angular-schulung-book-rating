@@ -1,5 +1,5 @@
 <div *ngIf="book" [id]="book.isbn" class="card">
-    <img class="card-img-top" src="{{book.image}}" alt="Cover of book: {{book.title}}" />
+    <img class="card-img-top" [src]="book.image" alt="Cover of book: {{book.title}}" />
 
     <div class="card-body">
         <h3 class="card-title">{{book.title}}</h3>
@@ -8,6 +8,15 @@
         <div class="row">
             <br-book-rating class="col" [rating]="book.rating"></br-book-rating>
             <p class="col price-tag">{{ book.price }} €</p>
+        </div>
+        <hr />
+        <div class="row">
+            <button class="col btn btn-green" (click)="doRateUp()" [disabled]="book.rating === MAX_RATING">
+                <i class="bi-hand-thumbs-up"></i>
+            </button>
+            <button class="col btn btn-red" (click)="doRateDown()" [disabled]="book.rating === MIN_RATING">
+                <i class="bi-hand-thumbs-down"></i>
+            </button>
         </div>
     </div>
 </div>

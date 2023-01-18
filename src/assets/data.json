@@ -6,7 +6,7 @@
             "isbn": "978-3442154623",
             "price": 4.74,
             "title": "Das Eva-Prinzip",
-            "rating": 0
+            "rating": 3
         },
         {
             "description": "Everything You Need To Know For The First Year From UK's Most Trusted Nanny",
@@ -14,7 +14,7 @@
             "isbn": "978-1409136217",
             "price": 17.95,
             "title": "Jo Frost's Confident Baby Care",
-            "rating": 0
+            "rating": 4
         }
     ]
 }
