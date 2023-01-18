@@ -1,0 +1,13 @@
+<div *ngIf="book" [id]="book.isbn" class="card">
+    <img class="card-img-top" src="{{book.image}}" alt="Cover of book: {{book.title}}" />
+
+    <div class="card-body">
+        <h3 class="card-title">{{book.title}}</h3>
+        <p class="card-text">{{book.description}}</p>
+        <hr />
+        <div class="row">
+            <br-book-rating class="col" [rating]="book.rating"></br-book-rating>
+            <p class="col price-tag">{{ book.price }} €</p>
+        </div>
+    </div>
+</div>

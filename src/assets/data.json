@@ -1,0 +1,20 @@
+{
+    "books": [
+        {
+            "description": "Karriere? Familie? Heimchen oder Rabenmutter? Deutschland diskutiert hitzig über die Rolle der Frau: Ist der wirtschaftliche und gesellschaftliche Druck stärker als das Glück des Mutterseins und die Freude am Frausein? Eva Herman, ehemalige Tagesschausprecherin und Mutter, plädiert für die Rückbesinnung auf weibliche Stärken. Mit ihrer Streitschrift hat sie einen empfindlichen Nerv unserer Gesellschaft getroffen.",
+            "image": "https://m.media-amazon.com/images/I/41MqRcTC0EL.jpg",
+            "isbn": "978-3442154623",
+            "price": 4.74,
+            "title": "Das Eva-Prinzip",
+            "rating": 0
+        },
+        {
+            "description": "Everything You Need To Know For The First Year From UK's Most Trusted Nanny",
+            "image": "https://m.media-amazon.com/images/I/611v58gYMEL.jpg",
+            "isbn": "978-1409136217",
+            "price": 17.95,
+            "title": "Jo Frost's Confident Baby Care",
+            "rating": 0
+        }
+    ]
+}
