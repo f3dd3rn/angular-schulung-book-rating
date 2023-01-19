@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Book } from 'src/app/models/book';
-import { MAX_RATING, MIN_RATING } from 'src/app/config';
 
 @Component({
   selector: 'br-book',
@@ -9,11 +8,10 @@ import { MAX_RATING, MIN_RATING } from 'src/app/config';
 })
 export class BookComponent {
   @Input() book?: Book;
+  @Input() canRateDown: boolean = false;
+  @Input() canRateUp: boolean = false;
   @Output() onRateDown: EventEmitter<void> = new EventEmitter();
   @Output() onRateUp: EventEmitter<void> = new EventEmitter();
-
-  MIN_RATING: number = MIN_RATING;
-  MAX_RATING: number = MAX_RATING;
 
   doRateDown() {
     this.onRateDown.emit();

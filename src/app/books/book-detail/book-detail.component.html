@@ -1,0 +1,15 @@
+<a routerLink="/books" class="btn btn-primary">Go to overview</a>
+<ng-container *ngIf="book$ | async as book">
+    <h1>{{book.title}}</h1>
+    <h2>{{book.subtitle}}</h2>
+    <div class="row">
+        <div class="col" *ngFor="let img of book.thumbnails">
+            <img [src]="img.url" [alt]="img.title" />
+        </div>
+    </div>
+    <p>{{book.description}}</p>
+    <br-book-rating [rating]="book.rating"></br-book-rating>
+    {{book.price | currency:'EUR'}}
+    <button class="btn btn-red" (click)="onDelete(book)"><i class="bi-trash"></i></button>
+    <!-- <pre>{{ book | json }}</pre> -->
+</ng-container>

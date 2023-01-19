@@ -1,10 +1,14 @@
-<h2 class="col-9">{{booksService.books.length}} books</h2>
-<ul class="row" *ngIf="booksService.books">
-    <li class="col-12 col-sm-6 col-md-4" *ngFor="let book of booksService.books">
-        <br-book 
-            [book]="book"
-            (onRateDown)="handleRateDown(book)"
-            (onRateUp)="handleRateUp(book)"
-        ></br-book>
-    </li>
-</ul>
+<ng-container *ngIf="books$ | async as books">
+    <h1>{{books.length}} books</h1>
+    <ul class="row g-4" *ngIf="books.length > 0">
+        <li class="col-12 col-sm-6 col-md-4" *ngFor="let book of books">
+            <br-book 
+                [book]="book"
+                [canRateDown]="bookRatingService.canRateDown(book)"
+                [canRateUp]="bookRatingService.canRateUp(book)"
+                (onRateDown)="handleRateDown(book)" 
+                (onRateUp)="handleRateUp(book)"
+            ></br-book>
+        </li>
+    </ul>
+</ng-container>
