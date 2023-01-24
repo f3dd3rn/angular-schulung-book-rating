@@ -1,0 +1,48 @@
+<form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="isbn">ISBN</label>
+        <input type="text" class="form-control" formControlName="isbn" />
+        <val-errors controlName="isbn">
+            <ng-template valError="required">The isbn is required.</ng-template>
+            <ng-template valError="pattern">The isbn must consist of digits.</ng-template>
+            <ng-template valError="minlength">The isbn must be at least 10 digits.</ng-template>
+            <ng-template valError="maxlength">The isbn must be a maximum of 13 digits.</ng-template>
+        </val-errors>
+    </div>
+    <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" class="form-control" formControlName="title" />
+        <val-errors controlName="title">
+            <ng-template valError="required">The title is required.</ng-template>
+        </val-errors>
+    </div>
+    <div class="form-group">
+        <label for="subtitle">Subtitle</label>
+        <input type="text" class="form-control" formControlName="subtitle" />
+    </div>
+    <div class="form-group">
+        <label for="description">Description</label>
+        <textarea class="form-control" formControlName="description"></textarea>
+        <val-errors controlName="description">
+            <ng-template valError="required">The description is required.</ng-template>
+            <ng-template valError="maxlength">The description has a maximum of 255 characters.</ng-template>
+        </val-errors>
+    </div>
+    <div class="form-group">
+        <label for="rating">Rating</label>
+        <input type="number" class="form-control" formControlName="rating" [min]="MIN_RATING" [max]="MAX_RATING" />
+        <val-errors controlName="rating">
+            <ng-template valError="required">The rating is required.</ng-template>
+            <ng-template valError="max">The max rating is 5.</ng-template>
+            <ng-template valError="min">The min rating is 1.</ng-template>
+        </val-errors>
+    </div>
+    <div class="form-group">
+        <label for="price">Price</label>
+        <input type="number" class="form-control" formControlName="price" min="0.0" />
+        <val-errors controlName="price">
+            <ng-template valError="min">The price can't be negative.</ng-template>
+        </val-errors>
+    </div>
+    <input type="submit" class="btn btn-primary" [disabled]="bookForm.invalid" />
+</form>

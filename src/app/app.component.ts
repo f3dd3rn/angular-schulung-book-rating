@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'book Rating';
+  title = 'book rating';
+  now = Date.now();
+  timer = setInterval(() => this.now = Date.now(), 1000);
 }

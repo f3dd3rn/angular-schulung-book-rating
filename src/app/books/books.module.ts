@@ -6,7 +6,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { BookComponent } from './book/book.component';
 import { BookRatingComponent } from './book/book-rating/book-rating.component';
 import { BookDetailComponent } from './book-detail/book-detail.component';
-
+import { SearchComponent } from './search/search.component';
+import { NewBookComponent } from './new-book/new-book.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ValdemortModule } from 'ngx-valdemort';
 
 @NgModule({
   declarations: [
@@ -14,10 +17,14 @@ import { BookDetailComponent } from './book-detail/book-detail.component';
     BookComponent,
     BookRatingComponent,
     BookDetailComponent,
+    SearchComponent,
+    NewBookComponent,
   ],
   imports: [
     CommonModule,
-    BooksRoutingModule
+    BooksRoutingModule,
+    ReactiveFormsModule,
+    ValdemortModule
   ],
   exports: [
     DashboardComponent,
